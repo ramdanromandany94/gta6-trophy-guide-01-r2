@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Leonida Legend</h1>
+      <p class="subtitle">GTA 6 trophy guide &amp; tracker — 55 PlayStation 5 trophies, offline</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <p id="progressText" class="progress-text">0 of 55 earned</p>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    <p id="gradeCounts" class="grade-counts"></p>
+  </div>
+</header>
+<nav class="tabs" aria-label="Sections">
+  <button id="tabTracker" type="button" class="tab active" data-tab="tracker">Tracker</button>
+  <button id="tabRoadmap" type="button" class="tab" data-tab="roadmap">Roadmap to Platinum</button>
+  <button id="tabMissables" type="button" class="tab" data-tab="missables">Missables</button>
+  <button id="tabAbout" type="button" class="tab" data-tab="about">About &amp; sources</button>
+</nav>
+<main>
+  <section id="viewTracker" class="view">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search a trophy name or description…" aria-label="Search trophies">
+      <div id="kindChips" class="chips" role="group" aria-label="Filter by kind">
+        <button type="button" class="chip active" data-kind="all">All 55</button>
+        <button type="button" class="chip" data-kind="story">Story</button>
+        <button type="button" class="chip" data-kind="side">Strangers</button>
+        <button type="button" class="chip" data-kind="collectible">Collectibles</button>
+        <button type="button" class="chip" data-kind="activity">Activities</button>
+        <button type="button" class="chip" data-kind="world">Open world</button>
+        <button type="button" class="chip" data-kind="missable">Missable</button>
+        <button type="button" class="chip" data-kind="unearned">Not earned</button>
+      </div>
+      <label class="grade-filter">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="importInput" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+    <div class="tracker-grid">
+      <div class="list-col">
+        <p id="listSummary" class="list-summary"></p>
+        <ul id="trophyList" class="trophy-list"></ul>
+      </div>
+      <aside id="detailPane" class="detail-pane" aria-live="polite"></aside>
+    </div>
+  </section>
+  <section id="viewRoadmap" class="view hidden">
+    <h2>Roadmap to the platinum</h2>
+    <p class="lede">One playthrough, about 200 hours, difficulty 4/10 (PowerPyx). Free roam stays open after the story, but there is no mission replay — so do the Chapter 1 meditation before Chapter 1 ends. Work the six stages in order; each stage lists the trophies it earns.</p>
+    <ol id="roadmapList" class="roadmap-list"></ol>
+  </section>
+  <section id="viewMissables" class="view hidden">
+    <h2>Missable trophies</h2>
+    <p class="lede">PowerPyx and GTABase both report exactly one trophy that can be missed. Every other trophy stays earnable in free roam after the story, because there is no mission replay but the story trophies unlock automatically when their mission or chapter ends.</p>
+    <div id="missableList" class="missable-list"></div>
+    <h3>Why nothing else can be missed</h3>
+    <p>Story and mission trophies unlock automatically when you finish their chapter or mission. Activities, collectibles, robberies and open-world trophies all stay available in free roam. The only moment the game takes away from you is the first meditation in Chapter 1.</p>
+  </section>
+  <section id="viewAbout" class="view hidden">
+    <h2>About &amp; sources</h2>
+    <p>This guide is an independent, fan-made tracker. It uses no Rockstar logo, artwork or game screenshots. The trophy names, descriptions and grades are shown as PlayStation publishes them, as listed by Exophase and PSNProfiles (the two agree on all 55). Every guide is written in our own words for this entry and names its sources beside it.</p>
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase — GTA 6 trophy list</a> (names, descriptions, grades)</li>
+      <li><a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles — GTA 6 trophies</a> (names, descriptions, grades, PSN counts)</li>
+      <li><a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">PowerPyx — GTA 6 Trophy Guide &amp; Roadmap</a> (difficulty 4/10, ~200 hours, the one missable trophy, 100% checklist figures, no mission replay, cheats disable trophies)</li>
+      <li><a href="https://cryptogames.gg/gta-6-trophies-achievements-full-list/">CryptoGames — GTA 6 Trophies and Achievements</a> (GTABase's missable flag and the 500-action Criminal Profile figure)</li>
+    </ul>
+    <h3>How the tracker stores your progress</h3>
+    <p>Your ticks are saved in this browser only (localStorage). Nothing is sent anywhere — this app makes no network request at all. Export downloads a JSON file of your earned trophies; import reads such a file back. The spoiler setting hides the names and descriptions of story trophies until you earn them.</p>
+    <p class="fineprint">Grand Theft Auto and GTA are trademarks of Take-Two Interactive. This guide is not affiliated with Rockstar Games or PlayStation.</p>
+  </section>
+</main>
+<footer><p>Leonida Legend — an offline, fan-made GTA 6 trophy guide &amp; tracker. No network requests, ever.</p></footer>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
